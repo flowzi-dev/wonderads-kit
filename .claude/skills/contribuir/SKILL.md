@@ -3,8 +3,8 @@ name: contribuir
 description: >
   Propõe à Flowzi uma melhoria ao kit para ficar para toda a equipa: um script, uma skill, uma regra
   ou uma boa prática. Vê o que mudou no kit, escreve com a pessoa o que é, porquê e como testar, faz o
-  zip da proposta sem passwords nem nada de clientes e, com o sim da pessoa, abre um Pull Request no
-  GitHub da equipa (ou explica como a enviar por uma Issue). Gatilhos: "propor isto à Flowzi",
+  zip da proposta sem passwords nem nada de clientes e, com o sim da pessoa, diz como a mandar à Flowzi
+  (por WhatsApp ou email; com conta no GitHub, numa Issue ou num Pull Request). Gatilhos: "propor isto à Flowzi",
   "partilhar com a equipa", "enviar este script à Flowzi", "isto devia ficar no kit", "/contribuir".
 ---
 
@@ -22,7 +22,7 @@ Correr `node scripts/contribuir.mjs`. Só lê. Compara o kit com a versão insta
 
 Ao lado de cada um vem o que impede de o propor, se houver alguma coisa. Se o script disser que falta o `MANIFESTO.json`, fazer o que ele diz (`/actualizar`) e voltar aqui.
 
-Se nada mudou, a pessoa pode ter só uma ideia: aí não há zip, vai directamente numa Issue (o script mostra o link).
+Se nada mudou, a pessoa pode ter só uma ideia: aí não há zip; escreve-a à Flowzi por WhatsApp ou email, ou numa Issue, se tiver conta no GitHub (o script mostra o link).
 
 ## 2 · Escolher e escrever, com a pessoa
 
@@ -58,7 +58,7 @@ Se o script recusar (um `.env`, ficheiros de `clientes/`, ficheiros grandes ou q
 O script diz como:
 
 - **Pull Request** (quando o computador tem o gh com sessão de alguém que pode escrever no repositório): perguntar "Abro a proposta no GitHub, como Pull Request, com a tua conta <conta>?". Só com o sim, correr o comando que o script mostrou: `node scripts/contribuir.mjs --pr "<caminho do zip>"`. O Claude Code pede licença com um aviso do kit, porque envia ficheiros para fora do computador; é de esperar. Mostrar à pessoa o link do Pull Request.
-- **Issue** (nos outros casos): mostrar o link que o script deu e explicar: abrir no browser com a sessão do GitHub iniciada, confirmar o título, arrastar o zip das Transferências para a caixa de texto e carregar em "Submit new issue".
+- **Nos outros casos** (quase sempre): dizer à pessoa onde ficou o zip, nas Transferências, e que o mande à Flowzi por WhatsApp ou por email, como qualquer ficheiro. Não é preciso conta no GitHub. Se a pessoa tiver conta e preferir, o link que o script deu abre uma Issue: entrar no GitHub, confirmar o título, arrastar o zip para a caixa de texto e carregar em "Submit new issue".
 
 ## 5 · Depois
 

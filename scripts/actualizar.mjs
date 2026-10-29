@@ -98,7 +98,7 @@ function semAcesso() {
     : s.nao === 'sem-resposta' ? 'o gh não respondeu a tempo'
     : 'o gh deste computador não tem sessão iniciada';
 }
-const comoDescarregar = repo ? `abrir ${repo.RELEASES} no browser (com a sessão do GitHub iniciada), descarregar o flowzi-wonderads-kit-<versão>.zip da versão mais recente (em Assets) para as Transferências e voltar a correr` : '';
+const comoDescarregar = repo ? `abrir ${repo.RELEASES} no browser, descarregar o flowzi-wonderads-kit-<versão>.zip da versão mais recente (em Assets) para as Transferências e voltar a correr` : '';
 
 // Traz do GitHub a release (a última, ou a de uma tag) para as Transferências, se for mais recente do que a instalada.
 // Sem rede ou sem acesso, devolve só o estado: a procura nas Transferências continua como sempre.
@@ -150,7 +150,7 @@ if (link) {
 function semVersaoNova() {
   if (github?.estado === 'em-dia') sair(`O kit está em dia: a versão mais recente no GitHub é ${github.versao} e a instalada é ${actual}. Nada a fazer.`, 0);
   if (github?.estado === 'sem-acesso') {
-    sair(`O repositório do kit no GitHub é privado e ${semAcesso()}.\n  Para ver se há versão nova: ${comoDescarregar} /actualizar.`);
+    sair(`Não consegui ver as versões no GitHub (${semAcesso()}).\n  Para ver se há versão nova: ${comoDescarregar} /actualizar.`);
   }
   sair(`Não encontrei nenhum flowzi-wonderads-kit*.zip mais recente do que o instalado (${actual}) nas Transferências nem no Ambiente de trabalho.\n  Descarregar o zip que a Flowzi enviou${repo ? ` (ou a última versão em ${repo.RELEASES})` : ''} e voltar a correr.`);
 }

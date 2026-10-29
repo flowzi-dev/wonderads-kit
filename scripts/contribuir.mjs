@@ -26,6 +26,7 @@ const agora = new Date();
 const hoje = `${agora.getFullYear()}-${dd(agora.getMonth() + 1)}-${dd(agora.getDate())}`;
 const curto = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-')
   .replace(/^-+/, '').slice(0, 40).replace(/-+$/, '') || 'proposta';
+const ENVIAR = 'por WhatsApp, ou por email para diogo.coutinho@flowzi.pt';
 const linkIssue = (assunto) => `${repo.PAGINA}/issues/new?template=proposta.md&title=${encodeURIComponent(`Proposta: ${assunto}`.trim())}`;
 
 function manifesto() {
@@ -75,7 +76,7 @@ if (zipPedido === null && prPedido === null) {
   const novos = ['scripts', '.claude/skills'].flatMap((p) => (existsSync(join(raiz, p)) ? repo.ficheirosEm(raiz, p) : []))
     .filter((f) => !Object.hasOwn(m.ficheiros, f));
   if (!alterados.length && !apagados.length && !novos.length) {
-    sair(`Nada mudou no kit desde a versão instalada (${m.versao}).\n  Uma ideia sem ficheiros também se propõe, numa Issue: ${linkIssue('')}`, 0);
+    sair(`Nada mudou no kit desde a versão instalada (${m.versao}).\n  Uma ideia sem ficheiros também se propõe: escrevê-la à Flowzi (${ENVIAR}) ou, com conta no GitHub, numa Issue: ${linkIssue('')}`, 0);
   }
   const linha = (tipo, f, nota) => `    ${tipo.padEnd(9)} ${f}${nota ? `   (${nota})` : ''}`;
   console.log(`\n  Kit na versão ${m.versao}. O que mudou desde então:\n`);
@@ -144,7 +145,7 @@ if (zipPedido !== null) {
   if (iguais.length) console.log(`  Ficaram de fora, por estarem iguais aos da versão instalada: ${iguais.join(', ')}`);
   const pode = podePR();
   if (pode.nao) {
-    console.log(`\n  Para enviar (${pode.nao}, por isso vai por uma Issue):\n  abrir ${linkIssue(assunto)}\n  com a sessão do GitHub iniciada, arrastar o zip para a caixa de texto e carregar em "Submit new issue".\n`);
+    console.log(`\n  Para enviar (${pode.nao}, por isso não vai como Pull Request):\n  mandar o zip à Flowzi (${ENVIAR}).\n  Quem tiver conta no GitHub também pode abrir ${linkIssue(assunto)}\n  com a sessão iniciada, arrastar o zip para a caixa de texto e carregar em "Submit new issue".\n`);
   } else {
     console.log(`\n  Pode ir como Pull Request no GitHub, com a conta ${pode.login}. Perguntar à pessoa e, só com o sim:\n  node scripts/contribuir.mjs --pr "${zip}"\n`);
   }
@@ -168,7 +169,7 @@ const assunto = (texto.match(/^Assunto: (.+)$/m) || [])[1]?.trim() || basename(z
 const versaoBase = (texto.match(/^Versão do kit de onde parte: `([^`]+)`/m) || [])[1] || '';
 const titulo = (texto.match(/^#\s+(.+)$/m) || [])[1]?.trim() || `Proposta: ${assunto}`;
 const pode = podePR();
-if (pode.nao) sair(`Não dá para abrir um Pull Request: ${pode.nao}.\n  Enviar por uma Issue: abrir ${linkIssue(assunto)} e arrastar o zip ${zip} para lá.`);
+if (pode.nao) sair(`Não dá para abrir um Pull Request: ${pode.nao}.\n  Mandar o zip ${zip} à Flowzi (${ENVIAR}), ou abrir ${linkIssue(assunto)} e arrastá-lo para lá.`);
 
 // O git usa a sessão do gh e nunca fica à espera de uma password no terminal.
 const credencial = ['-c', 'credential.helper=', '-c', `credential.helper=${repo.ajudanteGit()}`];
@@ -201,5 +202,5 @@ try {
   console.log(`\n  Pull Request aberto: ${pr.saida.split('\n').pop()}\n  ${temTag ? `Parte da versão ${versaoBase}` : 'Parte do main (a versão de partida não está no repositório)'}.`
     + ' A Flowzi revê, testa em Windows e em Mac e, se entrar, chega a todos com o /actualizar.\n');
 } catch (e) {
-  sair(`O Pull Request não ficou feito (${e.message}). Nada mudou no kit.\n  Enviar por uma Issue: abrir ${linkIssue(assunto)} e arrastar o zip ${zip} para lá.`);
+  sair(`O Pull Request não ficou feito (${e.message}). Nada mudou no kit.\n  Mandar o zip ${zip} à Flowzi (${ENVIAR}), ou abrir ${linkIssue(assunto)} e arrastá-lo para lá.`);
 }

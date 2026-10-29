@@ -151,7 +151,7 @@ Os textos entre `< >` vêm do briefing ou do texto aprovado do cliente; o que fa
 
 ## O mesmo estilo num cliente
 
-Com a marca da MIMUS (`principal` #1D1D1D, `acento` #FF8A8B, Montserrat):
+Com a marca de um cliente (`principal` #1D1D1D, `acento` #FF8A8B, Montserrat):
 
 - **Escuro** passa a #1D1D1D (branco por cima: 16,86:1; #A1A3AB por cima: 6,70:1).
 - **Botão principal em fundo escuro:** o acento #FF8A8B com texto #1D1D1D (7,43:1); o botão contra o fundo escuro também dá 7,43:1, acima dos 3:1 pedidos. Em fundo claro o acento não chega (2,27:1 sobre branco): lá o botão principal é escuro.

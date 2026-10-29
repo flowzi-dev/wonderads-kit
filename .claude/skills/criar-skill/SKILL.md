@@ -2,7 +2,7 @@
 name: criar-skill
 description: >
   Cria uma skill própria deste cliente para uma tarefa que se repete (por exemplo "página de
-  tratamento da MIMUS" ou "artigo do blogue da clínica X"), com a estrutura, o tom e as regras
+  tratamento da clínica X" ou "artigo do blogue da loja Y"), com a estrutura, o tom e as regras
   dele já escritos, para que saia sempre igual. Gatilhos: "cria uma skill", "faz disto uma
   receita", "isto repete-se sempre", "/criar-skill".
 ---
@@ -22,7 +22,7 @@ Perguntar, uma de cada vez:
 
 ## 2 · Escrever
 
-Nome: `<cliente>-<tarefa>`, em minúsculas e sem acentos (`mimus-tratamento`). Criar `.claude/skills/<nome>/SKILL.md` com esta forma:
+Nome: `<cliente>-<tarefa>`, em minúsculas e sem acentos (`clinica-sorriso-tratamento`). Criar `.claude/skills/<nome>/SKILL.md` com esta forma:
 
 ```
 ---

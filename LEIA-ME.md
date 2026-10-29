@@ -362,15 +362,15 @@ Para o pôr no Drive: `node scripts/documento.mjs <número> --drive`. Com o Goog
 
 ## Actualizar e propor melhorias
 
-O kit vive no GitHub da equipa, em https://github.com/flowzi-dev/wonderads-kit. É privado: entra-se com a conta do GitHub que a Flowzi juntou ao repositório. Cada versão sai lá, assinada pela Flowzi.
+O kit vive no GitHub, em https://github.com/flowzi-dev/wonderads-kit. Não é preciso conta nem instalar nada: o Claude vê lá as versões sozinho. Cada versão sai lá, assinada pela Flowzi, e só a Flowzi publica.
 
 **Actualizar.** Ao abrir o Claude, ele avisa quando há uma versão nova e diz o que traz; a barra de baixo mostra `versão nova: /actualizar`. Escreve-se `/actualizar`: o Claude vai buscar a versão, mostra a nova e a instalada e, com a confirmação, instala. Os clientes, as ligações e as páginas ficam como estão. No fim, sair do Claude (`/exit`) e voltar a entrar.
 
-Se o Claude disser que não consegue ver o GitHub, mostra o link das Releases. Abri-lo no browser com a sessão do GitHub iniciada, descarregar o `flowzi-wonderads-kit-<versão>.zip` (em Assets) para as Transferências, sem lhe mudar o nome, e voltar a escrever `/actualizar`. Para o Claude ver as versões sozinho, instala-se uma vez o GitHub CLI. No PowerShell: `winget install --id GitHub.cli`; fechar e abrir o VS Code e, no terminal de baixo, `gh auth login` (GitHub.com, HTTPS, "Login with a web browser"). No Mac: `brew install gh` e `gh auth login`.
+Se o Claude disser que não consegue ver o GitHub (sem rede, por exemplo), mostra o link das Releases. Abri-lo no browser, descarregar o `flowzi-wonderads-kit-<versão>.zip` (em Assets, não o "Source code") para as Transferências, sem lhe mudar o nome, e voltar a escrever `/actualizar`.
 
 O kit só instala versões assinadas pela Flowzi. Se disser que o zip não é assinado, ou que não bate certo, não se instala: descarrega-se outra vez do GitHub ou pede-se o zip à Flowzi. Um zip que a Flowzi envie por email ou WhatsApp continua a servir: guarda-se nas Transferências e escreve-se `/actualizar`.
 
-**Propor melhorias.** Um script que poupa tempo, uma skill que serve vários clientes, uma regra que evita um erro: escreve-se `/contribuir`. O Claude mostra o que mudou no vosso kit, escreve convosco o que é, porquê e como testar, e faz um zip da proposta nas Transferências, sem passwords nem nada dos clientes. Depois envia: com o GitHub CLI e permissão de escrita, abre um Pull Request (pergunta antes); senão, dá o link para abrir uma Issue "Proposta de melhoria", onde se arrasta o zip.
+**Propor melhorias.** Um script que poupa tempo, uma skill que serve vários clientes, uma regra que evita um erro: escreve-se `/contribuir`. O Claude mostra o que mudou no vosso kit, escreve convosco o que é, porquê e como testar, e faz um zip da proposta nas Transferências, sem passwords nem nada dos clientes. Depois, manda-se esse zip à Flowzi por WhatsApp ou por email. Quem tiver conta no GitHub pode, em vez disso, abrir uma Issue "Proposta de melhoria" e arrastar lá o zip (o Claude dá o link); quem a Flowzi juntou ao repositório, com o GitHub CLI, abre um Pull Request (o Claude pergunta antes).
 
 A Flowzi revê, testa em Windows e em Mac e, se a proposta entrar, publica uma versão nova, que todos recebem com `/actualizar`. Até lá, a mudança fica só no vosso kit, e a actualização seguinte substitui-a pela versão oficial: um script novo que não entrou desaparece do kit, mas fica no zip da proposta.
 

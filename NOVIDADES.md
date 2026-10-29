@@ -2,6 +2,11 @@
 
 O que muda em cada versão, para quem actualiza. O `/actualizar` mostra as que ainda não estão instaladas.
 
+## 2026.10.29
+
+- Actualizar sem conta: o kit vê as versões novas no GitHub sem conta e sem instalar nada. O aviso ao abrir o Claude e o `/actualizar` funcionam em todos os computadores.
+- `/contribuir` sem conta: a proposta fica num zip nas Transferências, que se manda à Flowzi por WhatsApp ou por email. Quem tiver conta no GitHub pode abrir uma Issue ou um Pull Request.
+
 ## 2026.10.27
 
 - O kit tem casa no GitHub da equipa. O `/actualizar` traz de lá a versão nova, e o Claude avisa ao abrir quando há uma e diz o que traz. O `/contribuir` envia à Flowzi um script, uma skill ou uma regra vossa, para ficar para todos (sem passwords nem nada dos clientes).
